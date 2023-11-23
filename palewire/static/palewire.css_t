@@ -118,12 +118,6 @@ p.caption {
     font-size: {{ theme_caption_font_size }};
 }
 
-{% if theme_show_related|lower == 'false' %}
-div.relations {
-    display: none;
-}
-{% endif %}
-
 div.sphinxsidebar a {
     color: {{ theme_sidebar_link }};
     text-decoration: none;
@@ -708,51 +702,4 @@ table.docutils.citation, table.docutils.citation td, table.docutils.citation th 
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-}
-
-
-/* relbar */
-
-.related {
-    line-height: 30px;
-    width: 100%;
-    font-size: 0.9rem;
-}
-
-.related.top {
-    border-bottom: 1px solid {{ theme_relbar_border }};
-    margin-bottom: 20px;
-}
-
-.related.bottom {
-    border-top: 1px solid {{ theme_relbar_border }};
-}
-
-.related ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.related li {
-    display: inline;
-}
-
-nav#rellinks {
-    float: right;
-}
-
-nav#rellinks li+li:before {
-    content: "|";
-}
-
-nav#breadcrumbs li+li:before {
-    content: "\00BB";
-}
-
-/* Hide certain items when printing */
-@media print {
-    div.related {
-        display: none;
-    }
 }

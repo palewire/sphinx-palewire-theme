@@ -34,9 +34,6 @@
   </nav>
 {%- endmacro %}
 
-{%- set theme_show_relbar_top = theme_show_relbar_top or theme_show_relbars %}
-{%- set theme_show_relbar_bottom = theme_show_relbar_bottom or theme_show_relbars %}
-
 {# removed existing top+bottom related nav, and embed in main content #}
 {%- block relbar1 %}{% endblock %}
 {%- block relbar2 %}{% endblock %}
@@ -52,27 +49,9 @@
         <div class="bodywrapper">
       {%- endif %}
 
-          {%- block relbar_top %}
-            {%- if theme_show_relbar_top|tobool %}
-              <div class="related top">
-                &nbsp;
-                {{- rellink_markup () }}
-              </div>
-            {%- endif %}
-          {% endblock %}
-
           <div class="body" role="main">
             {% block body %} {% endblock %}
           </div>
-
-          {%- block relbar_bottom %}
-            {%- if theme_show_relbar_bottom|tobool %}
-              <div class="related bottom">
-                &nbsp;
-                {{- rellink_markup () }}
-              </div>
-            {%- endif %}
-          {% endblock %}
 
       {%- if render_sidebar %}
         </div>
