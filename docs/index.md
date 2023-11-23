@@ -1,0 +1,1 @@
+# Sphinx palewire theme
