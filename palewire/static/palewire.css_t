@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
 {%- set theme_body_bg = theme_body_bg or theme_base_bg %}
 {%- set theme_code_highlight_bg = theme_code_highlight_bg or theme_body_bg %}
 {%- set theme_sidebar_header = theme_sidebar_header or theme_gray_1 %}
@@ -66,7 +69,7 @@ body {
 
 div.document {
     width: {{ theme_page_width }};
-    margin: 30px auto 0 auto;
+    margin: 0 auto;
 }
 
 div.documentwrapper {
@@ -91,11 +94,8 @@ hr {
 div.body {
     background-color: {{ theme_body_bg  }};
     color: {{ theme_body_text }};
+    min-width: 0;
     padding: 0 30px 0 30px;
-}
-
-div.body > .section {
-    text-align: {{ theme_body_text_align }};
 }
 
 div.footer {
@@ -118,7 +118,6 @@ p.caption {
 div.sphinxsidebar a {
     color: {{ theme_sidebar_link }};
     text-decoration: none;
-    border-bottom: 1px dotted {{ theme_sidebar_link_underscore }};
 }
 
 div.sphinxsidebar a:hover {
@@ -131,9 +130,16 @@ div.sphinxsidebarwrapper {
 
 div.sphinxsidebarwrapper h1.logo {
     margin-top: -10px;
-    text-align: center;
     margin-bottom: 5px;
     text-align: left;
+    font-size: 1.85em;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+div.sphinxsidebarwrapper h1.logo a,
+div.sphinxsidebarwrapper h1.logo a:visited {
+    color: black;
 }
 
 div.sphinxsidebar h3,
@@ -214,7 +220,8 @@ div.body h4,
 div.body h5,
 div.body h6 {
     font-family: {{ theme_head_font_family }};
-    font-weight: normal;
+    font-weight: 700;
+    line-height: 1.2;
     margin: 30px 0px 10px 0px;
     padding: 0;
 }
@@ -238,7 +245,11 @@ a.headerlink:hover {
 }
 
 div.body p, div.body dd, div.body li {
-    line-height: 1.4em;
+    line-height: 1.45em;
+}
+
+div.body li {
+    margin-bottom: 4px;
 }
 
 div.admonition {
@@ -352,9 +363,6 @@ pre, tt, code {
     margin: 0 -12px;
     padding: 0 12px;
     display: block;
-}
-
-img.screenshot {
 }
 
 tt.descname, tt.descclassname, code.descname, code.descclassname {
@@ -525,17 +533,11 @@ a:hover tt, a:hover code {
     }
 
     div.documentwrapper {
-    	margin-left: 0;
-    	margin-top: 0;
-    	margin-right: 0;
-    	margin-bottom: 0;
+    	margin: 0;
     }
 
     div.bodywrapper {
-    	margin-top: 0;
-    	margin-right: 0;
-    	margin-bottom: 0;
-    	margin-left: 0;
+    	margin: 0;
     }
 
     ul {
@@ -654,3 +656,5 @@ table.docutils.citation, table.docutils.citation td, table.docutils.citation th 
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+@import url("topics.css");
