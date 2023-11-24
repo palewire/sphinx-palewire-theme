@@ -50,9 +50,6 @@
 {%- set theme_narrow_sidebar_link = theme_narrow_sidebar_link or theme_gray_3 %}
 {%- set theme_sidebar_hr = theme_sidebar_hr or theme_gray_3 %}
 
-{%- set theme_relbar_border = theme_relbar_border or theme_gray_2 -%}
-
-
 @import url("basic.css");
 
 /* -- page layout ----------------------------------------------------------- */
@@ -132,26 +129,11 @@ div.sphinxsidebarwrapper {
     padding: 18px 10px;
 }
 
-div.sphinxsidebarwrapper p.logo {
-    padding: 0;
-    margin: -10px 0 0 0px;
-    text-align: center;
-}
-
 div.sphinxsidebarwrapper h1.logo {
     margin-top: -10px;
     text-align: center;
     margin-bottom: 5px;
-    text-align: {{ theme_logo_text_align }};
-}
-
-div.sphinxsidebarwrapper h1.logo-name {
-    margin-top: 0px;
-}
-
-div.sphinxsidebarwrapper p.blurb {
-    margin-top: 0;
-    font-style: {{ theme_description_font_style }};
+    text-align: left;
 }
 
 div.sphinxsidebar h3,
@@ -172,9 +154,7 @@ div.sphinxsidebar h3 a {
     color: {{ theme_sidebar_link }};
 }
 
-div.sphinxsidebar p.logo a,
 div.sphinxsidebar h3 a,
-div.sphinxsidebar p.logo a:hover,
 div.sphinxsidebar h3 a:hover {
     border: none;
 }
@@ -582,13 +562,6 @@ a:hover tt, a:hover code {
     .footer {
     	width: auto;
     }
-
-    .github {
-        display: none;
-    }
-
-
-
 }
 
 
@@ -609,11 +582,7 @@ a:hover tt, a:hover code {
         display: block;
         float: none;
         width: 102.5%;
-        {%- if theme_fixed_sidebar|lower == 'true' %}
-        margin: -20px -30px 20px -30px;
-        {%- else %}
         margin: 50px -30px -20px -30px;
-        {%- endif %}
         padding: 10px 20px;
         background: {{ theme_narrow_sidebar_bg }};
         color: {{ theme_narrow_sidebar_fg }};
@@ -626,10 +595,6 @@ a:hover tt, a:hover code {
 
     div.sphinxsidebar a {
         color: {{ theme_narrow_sidebar_link }};
-    }
-
-    div.sphinxsidebar p.logo {
-        display: none;
     }
 
     div.document {
@@ -665,21 +630,7 @@ a:hover tt, a:hover code {
     .footer {
         width: auto;
     }
-
-    .github {
-        display: none;
-    }
 }
-
-{%- if theme_fixed_sidebar|lower == 'true' %}
-@media screen and (min-width: 876px) {
-    div.sphinxsidebar {
-        position: fixed;
-        margin-left: 0;
-    }
-}
-{%- endif %}
-
 
 /* misc. */
 

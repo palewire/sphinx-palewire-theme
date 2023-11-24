@@ -30,9 +30,4 @@ html_sidebars = {
         "searchbox.html",
     ]
 }
-html_theme_options = {
-    "description": "A light, configurable Sphinx theme",
-    "github_user": "palewire",
-    "github_repo": "sphinx-palewire-theme",
-    "fixed_sidebar": True,
-}
+html_theme_options = {}
