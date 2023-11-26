@@ -16,7 +16,7 @@ html_theme = "palewire"
 
 ## Configuration
 
-The theme supports two different layouts, a "wide" layout and a "narrow" layout. The wide layout that includes a sidebar and is the default, but you can switch to the narrow single-column layout by adding the following line to your `conf.py` file:
+The theme supports two different layouts, a "wide" layout and a "narrow" layout. The wide layout that includes a sidebar is the default. You can switch to the narrow single-column layout by adding the following line to your `conf.py` file:
 
 ```python
 html_theme_options = {
