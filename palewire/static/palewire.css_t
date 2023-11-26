@@ -438,6 +438,7 @@ div.footer.wide {
     div.footer.narrow,
     div.footer.wide {
         width: auto;
+        padding: 0 20px;
     }
     .rtd_doc_footer {
         display: none;
