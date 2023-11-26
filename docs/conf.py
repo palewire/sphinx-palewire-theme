@@ -27,7 +27,8 @@ html_sidebars = {
     "**": [
         "about.html",
         "navigation.html",
-        "searchbox.html",
     ]
 }
-html_theme_options = {}
+html_theme_options = {
+    'nosidebar': True,
+}

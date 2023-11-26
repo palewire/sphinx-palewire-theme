@@ -138,7 +138,6 @@ figure {margin: 0; padding: 0;}
 {%- set theme_code_highlight_bg = theme_code_highlight_bg or theme_body_bg %}
 {%- set theme_sidebar_header = theme_sidebar_header or theme_gray_1 %}
 {%- set theme_sidebar_link = theme_sidebar_link or theme_gray_1 %}
-{%- set theme_anchor_hover_fg = theme_anchor_hover_fg or theme_gray_1 %}
 
 {%- set theme_footnote_border = theme_footnote_border or theme_gray_2 %}
 {%- set theme_pre_bg = theme_pre_bg or theme_gray_2 %}
@@ -202,42 +201,42 @@ body {
 }
 
 /* The header */
-nav {
+.nav {
     display: block;
     margin-top: 0.75em;
     margin-bottom: 0.5em;
     font-size: 1em;
     line-height: 1.7em;
 }
-nav .shingle {
+.nav .shingle {
     font-size: 1.7em;
     font-weight: 700;
     text-align: left;
     padding-left: 0.15em;
 }
-nav .shingle a {
+.nav .shingle a {
     text-decoration: none;
     font-weight: bold;
     color: #000;
 }
-nav .shingle a:hover {
+.nav .shingle a:hover {
     color: #686868;
 }
 @media (max-width: 550px) {
-    nav .shingle {
+    .nav .shingle {
         float: left;
         margin-bottom: 5px;
         padding-left: 0;
    }
 }
-nav .links {
+.nav .links {
     text-align: right;
 }
-nav .links ul {
+.nav .links ul {
     float: right;
     list-style-type: none;
 }
-nav .links li {
+.nav .links li {
     float: left;
     list-style-position: inside;
     margin-left: 0.5em;
@@ -245,7 +244,7 @@ nav .links li {
     font-weight: 300;
 }
 @media (max-width: 550px) {
-    nav .links li {
+    .nav .links li {
        font-size: .825em;
     }
 }
@@ -260,17 +259,22 @@ nav .links li {
 
 
 div.document {
+    {% if render_sidebar %}
     width: {{ theme_page_width }};
+    {% else %}
+    width: 755px;
+    {% endif %}
     margin: 0 auto;
 }
 
 div.documentwrapper {
-    float: left;
+    display: flex;
     width: 100%;
 }
 
 div.bodywrapper {
-    margin: 0 0 0 {{ theme_sidebar_width }};
+    width: 100%;
+    overflow: auto;
 }
 
 div.sphinxsidebar {
@@ -287,15 +291,26 @@ div.body {
     background-color: {{ theme_body_bg  }};
     color: {{ theme_body_text }};
     min-width: 0;
-    padding: 0 30px 0 30px;
+    padding: 0;
 }
 
 div.footer {
+    {% if render_sidebar %}
     width: {{ theme_page_width }};
-    margin: 20px auto 30px auto;
-    font-size: 14px;
-    color: {{ theme_footer_text }};
-    text-align: right;
+    {% else %}
+    width: 755px;
+    {% endif %}
+    text-align: left;
+    margin: 1em auto 1em auto;
+    font-size: .8em;
+    border-top: solid 2px #e5e5e5;
+    padding-top: 0.5em;
+}
+
+@media (max-width: 550px) {
+    div.footer {
+        font-size: 0.65em;
+    }
 }
 
 div.footer a {
@@ -425,9 +440,15 @@ div.body h6 {
     line-height: 1.2;
     margin: 30px 0px 10px 0px;
     padding: 0;
+    color: {{ theme_base_text }};
 }
 
-div.body h1 { margin-top: 0; padding-top: 0; font-size: 240%; }
+div.body h1 {
+    font-size: 2.2em;
+    margin: 0 0 .1em;
+    line-height: 130%;
+    font-weight: 800;
+}
 div.body h2 { font-size: 180%; }
 div.body h3 { font-size: 150%; }
 div.body h4 { font-size: 130%; }
@@ -435,22 +456,78 @@ div.body h5 { font-size: 100%; }
 div.body h6 { font-size: 100%; }
 
 a.headerlink {
-    color: {{ theme_anchor }};
-    padding: 0 4px;
-    text-decoration: none;
-}
-
-a.headerlink:hover {
-    color: {{ theme_anchor_hover_fg }};
-    background: {{ theme_anchor_hover_bg }};
+    visibility: hidden;
 }
 
 div.body p, div.body dd, div.body li {
     line-height: 1.45em;
 }
 
+div.body p {
+    margin: 20px 0;
+}
+
+div.body h1 + p,
+div.body h2 + p,
+div.body h3 + p,
+div.body h4 + p,
+div.body h5 + p,
+div.body h6 + p {
+    margin-top: 5px;
+}
+
+div.body h1 a,
+div.body h2 a,
+div.body h3 a,
+div.body h4 a,
+div.body h5 a,
+div.body h6 a {
+    color: {{ theme_base_text }};
+    text-decoration: none;
+}
+
+/* Code highlights */
+div.highlight {
+    background-color: {{ theme_code_highlight_bg }};
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.highlight {
+    background: {{ theme_highlight_bg }};
+}
+
+pre, tt, code {
+    font-family: {{theme_code_font_family}};
+    font-size: {{ theme_code_font_size }};
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+pre {
+    padding: 10px 7px;
+    margin: 0;
+    line-height: 1.3em;
+}
+
+.hll {
+    background-color: {{theme_code_highlight}};
+    margin: 0 -12px;
+    padding: 0 12px;
+    display: block;
+}
+
+tt.descname, tt.descclassname, code.descname, code.descclassname {
+    font-size: 0.95em;
+}
+
+tt.descname, code.descname {
+    padding-right: 0.08em;
+}
+
+
 div.admonition {
-    margin: 20px 0px;
+    margin: 20px 0;
     padding: 10px 30px;
     background-color: {{ theme_admonition_bg }};
     border: 1px solid {{ theme_admonition_border }};
@@ -472,14 +549,6 @@ div.admonition p.admonition-title {
 
 div.admonition p.last {
     margin-bottom: 0;
-}
-
-div.highlight {
-    background-color: {{ theme_code_highlight_bg }};
-}
-
-dt:target, .highlight {
-    background: {{ theme_highlight_bg }};
 }
 
 div.warning {
@@ -548,26 +617,6 @@ p.admonition-title {
 
 p.admonition-title:after {
     content: ":";
-}
-
-pre, tt, code {
-    font-family: {{theme_code_font_family}};
-    font-size: {{ theme_code_font_size }};
-}
-
-.hll {
-    background-color: {{theme_code_highlight}};
-    margin: 0 -12px;
-    padding: 0 12px;
-    display: block;
-}
-
-tt.descname, tt.descclassname, code.descname, code.descclassname {
-    font-size: 0.95em;
-}
-
-tt.descname, code.descname {
-    padding-right: 0.08em;
 }
 
 img.screenshot {
@@ -655,13 +704,6 @@ blockquote {
     padding: 0;
 }
 
-pre {
-    background: {{ theme_pre_bg }};
-    padding: 7px 30px;
-    margin: 15px 0px;
-    line-height: 1.3em;
-}
-
 div.viewcode-block:target {
     background: {{ theme_viewcode_target_bg }};
 }
@@ -699,7 +741,6 @@ a:hover tt, a:hover code {
 
     div.document {
        width: 100%;
-
     }
 
     div.documentwrapper {
@@ -713,33 +754,11 @@ a:hover tt, a:hover code {
     .document {
     	width: auto;
     }
-
-    .footer {
-    	width: auto;
-    }
-
-    .bodywrapper {
-    	margin: 0;
-    }
-
-    .footer {
-    	width: auto;
-    }
 }
 
 
 
 @media screen and (max-width: 875px) {
-
-    body {
-        margin: 0;
-        padding: 20px 30px;
-    }
-
-    div.documentwrapper {
-        float: none;
-        background: {{ theme_base_bg }};
-    }
 
     div.sphinxsidebar {
         display: block;
@@ -775,7 +794,7 @@ a:hover tt, a:hover code {
 
     div.body {
         min-height: 0;
-        padding: 0;
+        padding: 0 2%;
     }
 
     .rtd_doc_footer {
@@ -795,40 +814,35 @@ a:hover tt, a:hover code {
     }
 }
 
-/* misc. */
-
-.revsys-inline {
-    display: none!important;
-}
-
-/* Make nested-list/multi-paragraph items look better in Releases changelog
- * pages. Without this, docutils' magical list fuckery causes inconsistent
- * formatting between different release sub-lists.
- */
-div#changelog > div.section > ul > li > p:only-child {
-    margin-bottom: 0;
-}
-
-/* Hide fugly table cell borders in ..bibliography:: directive output */
-table.docutils.citation, table.docutils.citation td, table.docutils.citation th {
-  border: none;
-  /* Below needed in some edge cases; if not applied, bottom shadows appear */
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-
 /* Overrides for the default TOC box styles */
 div.topic {
     margin: 0;
     padding: 8px 12px;
 }
 
-p.topic-title {
+div.body p.topic-title {
     margin: 0;
+    font-size: 1.1em;
+    font-weight: 700;
 }
 
 div.topic ul {
     margin-top: 6px;
+}
+
+nav.contents, aside.topic, div.topic {
+  border: 1px solid #e5e5e5;
+  padding: 7px 10px;
+  margin: 10px 0;
+}
+
+div.body ul.simple {
+    margin: 10px 0 10px 25px;
+    padding: 0;
+}
+div.body ul.simple li {
+    list-style-type: disc;
+}
+div.body ul.simple li p {
+    margin: 4px 0;
 }
