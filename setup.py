@@ -58,7 +58,7 @@ setup(
         "Source": "https://github.com/palewire/sphinx-palewire-theme/",
         "Tracker": "https://github.com/palewire/sphinx-palewire-theme/issues",
     },
-    packages=find_packages(["palewire"]),
+    packages=find_packages("palewire"),
     setup_requires=["setuptools_scm"],
     use_scm_version={"version_scheme": version_scheme, "local_scheme": local_version},
     license="MIT",
@@ -71,9 +71,14 @@ setup(
         "Programming Language :: Python :: 3.11",
         "License :: OSI Approved :: MIT License",
     ],
+    install_requires=[
+        "Sphinx",
+    ],
     entry_points={
         "sphinx.html_themes": [
             "palewire = palewire",
         ]
     },
+    zip_safe=False,
+    include_package_data=True,
 )
