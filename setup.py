@@ -2,7 +2,7 @@
 import os
 import time
 
-from setuptools import find_packages, setup
+from setuptools import setup
 from setuptools_scm.version import guess_next_version
 
 
@@ -58,7 +58,9 @@ setup(
         "Source": "https://github.com/palewire/sphinx-palewire-theme/",
         "Tracker": "https://github.com/palewire/sphinx-palewire-theme/issues",
     },
-    packages=find_packages("palewire"),
+    packages=[
+        "palewire",
+    ],
     setup_requires=["setuptools_scm"],
     use_scm_version={"version_scheme": version_scheme, "local_scheme": local_version},
     license="MIT",
