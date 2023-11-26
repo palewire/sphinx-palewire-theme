@@ -120,7 +120,7 @@ jobs:
 
       - id: install-python-dependencies
         name: Install Python dependencies
-        run: pipenv install --dev --deploy
+        run: pipenv sync
         shell: bash
 
       - id: build-source

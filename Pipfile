@@ -5,7 +5,6 @@ verify_ssl = true
 
 [dev-packages]
 twine = "*"
-setuptools-scm = "*"
 pre-commit = "*"
 mypy = "*"
 types-requests = "*"
@@ -28,6 +27,7 @@ tomli = "*"
 [packages]
 exceptiongroup = "*"
 Sphinx = "*"
+setuptools-scm = "*"
 
 [requires]
 python_version = "3.11"

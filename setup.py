@@ -75,6 +75,7 @@ setup(
     ],
     install_requires=[
         "Sphinx",
+        "setuptools-scm",
     ],
     entry_points={
         "sphinx.html_themes": [
