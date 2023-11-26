@@ -1,24 +1,27 @@
+"""Styles for Pygments."""
 # flake8: noqa
 
 from pygments.style import Style
 from pygments.token import (
-    Keyword,
-    Name,
     Comment,
-    String,
     Error,
+    Generic,
+    Keyword,
+    Literal,
+    Name,
     Number,
     Operator,
-    Generic,
-    Whitespace,
-    Punctuation,
     Other,
-    Literal,
+    Punctuation,
+    String,
+    Whitespace,
 )
 
 
 # Originally based on FlaskyStyle which was based on 'tango'.
 class Alabaster(Style):
+    """Alabaster style."""
+
     background_color = "#f8f8f8"  # doesn't seem to override CSS 'pre' styling?
     default_style = ""
 

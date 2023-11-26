@@ -1,9 +1,10 @@
+"""Sphinx configuration."""
 import os
 import sys
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath(".."))
 
 extensions = [
     "myst_parser",
@@ -30,5 +31,5 @@ html_sidebars = {
     ]
 }
 html_theme_options = {
-    'nosidebar': True,
+    "nosidebar": True,
 }

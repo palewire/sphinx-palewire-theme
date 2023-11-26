@@ -1,6 +1,3 @@
-```{include} _templates/nav.html
-```
-
 # cpi
 
 A Python library that quickly adjusts U.S. dollars for inflation using the Consumer Price Index (CPI).
