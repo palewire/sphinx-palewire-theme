@@ -7,6 +7,11 @@ A Python library that quickly adjusts U.S. dollars for inflation using the Consu
 :depth: 2
 ```
 
+```{eval-rst}
+.. autofunction:: atcf_data_parser.get_dataframe
+.. autofunction:: atcf_data_parser.get_gzipped_url
+``````
+
 ## Installation
 
 The library can be installed from the Python Package Index with any of the standard Python installation tools.

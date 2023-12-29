@@ -24,6 +24,7 @@ sphinxcontrib-napoleon = "*"
 sphinxcontrib-mermaid = "*"
 myst-parser = "*"
 tomli = "*"
+atcf-data-parser = "*"
 
 [packages]
 exceptiongroup = "*"

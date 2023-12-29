@@ -451,3 +451,30 @@ div.footer.wide {
         font-size: 0.65em;
     }
 }
+
+dl.function {
+    margin: 1em 0;
+}
+
+.sig-name, .descname, .descclassname {
+    font-family: {{ theme_code_font_family }};
+    font-weight: 700;
+}
+
+dl.function dd {
+    padding-left: 8px;
+}
+
+dl.function strong {
+    font-family: {{ theme_code_font_family }};
+    font-weight: 700;
+}
+
+dl.function em {
+    font-family: {{ theme_code_font_family }};
+    font-style: italic;
+}
+
+dl.function .rubric {
+    margin-bottom: 2px;
+}
