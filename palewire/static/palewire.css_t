@@ -307,9 +307,17 @@ a.headerlink {
 
 div.body p {
     line-height: 1.45em;
-    margin-bottom: 1.25em;
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
     font-weight: 300;
 }
+
+div.body h1 + p { margin-top: 0; }
+div.body h2 + p { margin-top: 0; }
+div.body h3 + p { margin-top: 0; }
+div.body h4 + p { margin-top: 0; }
+div.body h5 + p { margin-top: 0; }
+div.body h6 + p { margin-top: 0; }
 
 div.body h1 a,
 div.body h2 a,
