@@ -478,3 +478,59 @@ dl.function em {
 dl.function .rubric {
     margin-bottom: 2px;
 }
+
+.table-container {
+    overflow-x: auto;
+}
+
+table.docutils {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  border-collapse: collapse;
+  border: 1px solid #888;
+  box-shadow: 2px 2px 4px #eee;
+}
+
+table.docutils td, table.docutils th {
+    border: 1px solid #888;
+    padding: 0.25em 0.7em;
+}
+
+table.docutils th {
+    text-align: left;
+    padding-right: 5px;
+    font-weight: 700;
+}
+
+table.docutils th p {
+    font-weight: 700;
+}
+
+table.docutils th>:first-child,
+table.docutils td>:first-child {
+    margin-top: 0
+}
+
+table.docutils th>:last-child,
+table.docutils td>:last-child {
+    margin-bottom: 0
+}
+
+table.docutils td.name {
+  max-width: 200px;
+}
+
+table.docutils .center {
+  text-align: center;
+}
+
+table.docutils .right {
+  text-align: right;
+}
+
+@media (max-width: 550px) {
+  table.docutils thead th {
+      white-space: nowrap;
+  }
+}

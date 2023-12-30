@@ -7,6 +7,26 @@ A Python library that quickly adjusts U.S. dollars for inflation using the Consu
 :depth: 2
 ```
 
+Here is the complete list of available languages.
+
+|Code|Language|
+|:---|:-------|
+|en|English|
+|da|Danish|
+|de|German|
+|el|Greek|
+|es|Spanish|
+|fr|French|
+|ga|Irish|
+|he|Hebrew|
+|hu|Hungarian|
+|is|Icelandic|
+|jp|Japanese|
+|pl|Polish|
+|ru|Russian|
+|tr|Turkish|
+
+
 ```{eval-rst}
 .. autofunction:: atcf_data_parser.get_dataframe
 .. autofunction:: atcf_data_parser.get_gzipped_url

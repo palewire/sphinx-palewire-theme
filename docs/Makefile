@@ -12,4 +12,4 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 livehtml:
-	sphinx-autobuild -b html $(SOURCEDIR) $(BUILDDIR)/html
+	sphinx-autobuild -a $(SOURCEDIR) $(BUILDDIR)/html --watch $(SOURCEDIR)/../palewire/
