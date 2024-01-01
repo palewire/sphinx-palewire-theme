@@ -312,12 +312,12 @@ div.body p {
     font-weight: 300;
 }
 
-div.body h1 + p { margin-top: 0; }
-div.body h2 + p { margin-top: 0; }
-div.body h3 + p { margin-top: 0; }
-div.body h4 + p { margin-top: 0; }
-div.body h5 + p { margin-top: 0; }
-div.body h6 + p { margin-top: 0; }
+div.body h1 + p { margin-top: 0.125em; }
+div.body h2 + p { margin-top: 0.125em; }
+div.body h3 + p { margin-top: 0.125em; }
+div.body h4 + p { margin-top: 0.125em; }
+div.body h5 + p { margin-top: 0.125em; }
+div.body h6 + p { margin-top: 0.125em; }
 
 div.body h1 a,
 div.body h2 a,
