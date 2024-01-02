@@ -460,30 +460,38 @@ div.footer.wide {
     }
 }
 
-dl.function {
+dl.function,
+dl.class {
     margin: 1em 0;
 }
 
-.sig-name, .descname, .descclassname {
+.sig-name,
+.sig-object,
+.descname,
+.descclassname {
     font-family: {{ theme_code_font_family }};
     font-weight: 700;
 }
 
-dl.function dd {
+dl.function dd,
+dl.class dd {
     padding-left: 8px;
 }
 
-dl.function strong {
+dl.function strong,
+dl.class strong {
     font-family: {{ theme_code_font_family }};
     font-weight: 700;
 }
 
-dl.function em {
+dl.function em,
+dl.class em {
     font-family: {{ theme_code_font_family }};
     font-style: italic;
 }
 
-dl.function .rubric {
+dl.function .rubric,
+dl.class .rubric {
     margin-bottom: 2px;
 }
 
