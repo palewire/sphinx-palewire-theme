@@ -1,6 +1,7 @@
 """Sphinx configuration."""
 import os
 import sys
+from typing import Any
 from datetime import datetime
 from pathlib import Path
 
@@ -24,12 +25,12 @@ html_theme = "palewire"
 html_theme_path = [
     Path(__file__).parent.parent.absolute(),
 ]
-html_sidebars = {
+html_sidebars: Any[Any] = {
     "**": [
         "about.html",
         "navigation.html",
     ]
 }
-html_theme_options = {
+html_theme_options: Any[Any] = {
     # "nosidebar": True,
 }
