@@ -11,18 +11,17 @@
   <link rel="shortcut icon" href="https://palewi.re/static/favicon.ico" />
 {% endblock %}
 
-{# top+bottom related navs; we also have our own in sidebar #}
 {%- macro rellink_markup() %}
   <nav id="rellinks">
     <ul>
       {%- if prev %}
-        <li>
+        <li class="prev">
           &larr;
           <a href="{{ prev.link|e }}" title="Previous document">{{ prev.title }}</a>
         </li>
       {%- endif %}
       {%- if next %}
-        <li>
+        <li class="next">
           <a href="{{ next.link|e }}" title="Next document">{{ next.title }}</a>
           &rarr;
         </li>
@@ -45,7 +44,11 @@
         <div class="bodywrapper">
           {% include "nav.html" %}
           <div class="body" role="main">
-            {% block body %} {% endblock %}
+            {% block body %}{% endblock %}
+          </div>
+          {{ rellink_markup() }}
+          <div class="footer">
+            {% if show_copyright %}&copy; {{ copyright }}{% endif %}
           </div>
         </div>
       </div>
@@ -54,7 +57,4 @@
 {% endblock %}
 
 {%- block footer %}
-    <div class="footer {% if render_sidebar %}wide{% else %}narrow{% endif%}">
-      {% if show_copyright %}&copy; {{ copyright }}{% endif %}
-    </div>
 {%- endblock %}

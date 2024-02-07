@@ -31,5 +31,5 @@ html_sidebars = {
     ]
 }
 html_theme_options = {
-    "nosidebar": True,
+    # "nosidebar": True,
 }

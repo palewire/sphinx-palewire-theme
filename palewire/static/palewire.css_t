@@ -96,7 +96,7 @@ figure {margin: 0; padding: 0;}
     margin-right: 0px;
   }
 
-  @media handheld, only screen and (max-width: 550px) {
+  @media handheld, only screen and (max-width: 875px) {
     body {
       -webkit-text-size-adjust: none;
     }
@@ -147,7 +147,7 @@ body {
     background-color: {{ theme_base_bg  }};
     text-align: left;
 }
-@media (max-width: 550px) {
+@media (max-width: 875px) {
     body {
         font-size: 0.85em;
     }
@@ -172,16 +172,65 @@ div.documentwrapper {
 
 div.bodywrapper {
     width: 100%;
-    overflow: auto;
+}
+
+div.document.wide div.bodywrapper {
+    max-width: {{ theme_narrow_page_width }};
+    margin: 0 auto;
+}
+
+div.sphinxsidebar {
+    width: {{ theme_sidebar_width }};
+    margin-top: 100px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+div.sphinxsidebar a,
+div.sphinxsidebar a:visited {
+  color: {{ theme_dar_gray }};
+  text-decoration: none;
+}
+
+div.sphinxsidebar a:hover {
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+div.sphinxsidebarwrapper {
+    padding: 0 22px 0 0;
+}
+
+div.sphinxsidebar h1.logo {
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  text-align: left;
+  color: {{ theme_base_text }}
+}
+
+div.sphinxsidebar h3 {
+  color: #444;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+div.sphinxsidebar ul {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 div.body {
     background-color: {{ theme_base_bg  }};
-    color: {{ theme_body_text }};
     min-width: 0;
     padding: 0;
 }
-
 
 @media screen and (max-width: 875px) {
     div.document,
@@ -190,10 +239,18 @@ div.body {
         width: 100%;
         margin: 0;
     }
+}
 
-    div.body {
+@media screen and (max-width: 875px) {
+    div.body, div.footer {
         min-height: 0;
         padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: {{ theme_wide_page_width }}) {
+    div.sphinxsidebar {
+        display: none;
     }
 }
 
@@ -205,6 +262,11 @@ div.body {
     font-size: 1em;
     line-height: 1.7em;
 }
+
+div.document.wide .nav {
+    max-width: {{ theme_narrow_page_width }};
+}
+
 .nav .shingle {
     font-size: 1.7em;
     font-weight: 700;
@@ -219,7 +281,7 @@ div.body {
 .nav .shingle a:hover {
     color: #686868;
 }
-@media (max-width: 550px) {
+@media (max-width: 875px) {
     .nav .shingle {
         float: left;
         margin-bottom: 5px;
@@ -240,7 +302,7 @@ div.body {
     font-size: 0.9em;
     font-weight: 300;
 }
-@media (max-width: 550px) {
+@media (max-width: 875px) {
     .nav .links li {
        font-size: .825em;
     }
@@ -343,7 +405,7 @@ pre, code {
     overflow-y: hidden;
     overflow-x: auto;
 }
-@media (max-width: 550px) {
+@media (max-width: 875px) {
     pre, code {
         font-size: 0.85em;
     }
@@ -433,30 +495,13 @@ div.footer {
     padding-top: 0.5em;
 }
 
-div.footer.narrow {
-    width: {{ theme_narrow_page_width }};
-}
-
-div.footer.wide {
-    width: {{ theme_wide_page_width }};
-}
-
 @media screen and (max-width: 875px) {
-    div.footer,
-    div.footer.narrow,
-    div.footer.wide {
+    div.footer {
         width: auto;
-        padding-left: 20px;
-        padding-right: 20px;
+        font-size: 0.65em;
     }
     .rtd_doc_footer {
         display: none;
-    }
-}
-
-@media (max-width: 550px) {
-    div.footer {
-        font-size: 0.65em;
     }
 }
 
@@ -545,8 +590,57 @@ table.docutils .right {
   text-align: right;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 875px) {
   table.docutils thead th {
       white-space: nowrap;
   }
+}
+
+/* LISTS */
+
+div.body ol, div.body ul {
+  margin: 10px 0 10px 30px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+div.body li {
+    margin-bottom: 4px;
+    line-height: 1.45;
+    list-style-type: disc;
+}
+
+/* rel links */
+
+nav#rellinks {
+  margin-top: .75em;
+  margin-bottom: .5em;
+  font-size: 1em;
+  line-height: 1.7em;
+  clear: both;
+  width: 100%;
+}
+
+nav#rellinks ul {
+  margin: 0;
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav#rellinks li {
+  flex: 1;
+  display: inline;
+}
+
+nav#rellinks li.prev {
+    text-align: left;
+    padding-left: 10px;
+}
+
+nav#rellinks li.next {
+    text-align: right;
+    padding-right: 10px;
 }
