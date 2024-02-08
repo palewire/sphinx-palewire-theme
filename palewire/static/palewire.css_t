@@ -665,3 +665,8 @@ img {
   padding-left: 0;
   margin-top: 0;
 }
+
+.tag_hide-cell {
+    overflow: auto;
+    display: none;
+}
