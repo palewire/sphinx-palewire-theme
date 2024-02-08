@@ -425,7 +425,7 @@ pre {
 
 div.admonition {
     margin: 20px 0;
-    padding: 10px 30px;
+    padding: 20px;
     background-color: {{ theme_admonition_bg }};
     border: 1px solid {{ theme_admonition_border }};
 }
