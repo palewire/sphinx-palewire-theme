@@ -667,6 +667,6 @@ img {
 }
 
 .tag_hide-cell {
-    overflow: auto;
-    display: none;
+  overflow: auto;
+  display: none !important;
 }
