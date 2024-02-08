@@ -44,6 +44,11 @@
         <div class="bodywrapper">
           {% include "nav.html" %}
           <div class="body" role="main">
+            {% if pagename != 'index' %}
+              <div class="breadcrumbs  {% if render_sidebar %}hide-desktop{% endif %}">
+                <a href="{{ pathto('index') }}">{{ project }}</a>
+              </div>
+            {% endif %}
             {% block body %}{% endblock %}
           </div>
           {{ rellink_markup() }}

@@ -5,7 +5,7 @@ means becoming comfortable with your computer's command line
 environment. If you haven't seen it before, it looks something like
 this:
 
-```{figure} _static/img/terminal.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/terminal.png
 :width: 600 px
 ```
 

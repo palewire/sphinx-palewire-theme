@@ -353,8 +353,8 @@ div.body h6 {
 
 div.body h1 {
     font-size: 2.2em;
-    margin: 0 0 .1em;
-    line-height: 130%;
+    margin: 0 0 0.2em;
+    line-height: 1.1;
     font-weight: 800;
 }
 div.body h2 { font-size: 1.15em; }
@@ -425,7 +425,7 @@ pre {
 
 div.admonition {
     margin: 20px 0;
-    padding: 20px;
+    padding: 1em;
     background-color: {{ theme_admonition_bg }};
     border: 1px solid {{ theme_admonition_border }};
 }
@@ -433,7 +433,7 @@ div.admonition {
 div.admonition p.admonition-title {
     font-family: {{ theme_head_font_family }};
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.25em;
     margin: 0 0 10px 0;
     padding: 0;
     line-height: 1;
@@ -623,7 +623,6 @@ nav#rellinks {
 
 nav#rellinks ul {
   margin: 0;
-  font-size: 16px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -643,4 +642,21 @@ nav#rellinks li.prev {
 nav#rellinks li.next {
     text-align: right;
     padding-right: 10px;
+}
+
+.breadcrumbs {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.02rem;
+    padding-bottom: 0.25em;
+}
+
+@media screen and (min-width: 875px) {
+    .hide-desktop {
+        display: none;
+    }
+}
+
+img {
+    max-width: 100%;
 }
