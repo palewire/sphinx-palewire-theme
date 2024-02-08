@@ -32,5 +32,5 @@ html_sidebars: Any[Any] = {
     ]
 }
 html_theme_options: Any[Any] = {
-    #"nosidebar": True,
+    # "nosidebar": True,
 }
