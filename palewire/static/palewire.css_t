@@ -661,12 +661,13 @@ img {
     max-width: 100%;
 }
 
-.cell_output {
-  padding-left: 0;
-  margin-top: 0;
+.cell_output.docutils {
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+  overflow: auto !important;
 }
 
 .tag_hide-cell {
-  overflow: auto;
+  overflow: auto !important;
   display: none !important;
 }
