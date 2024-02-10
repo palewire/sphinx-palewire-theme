@@ -181,7 +181,7 @@ div.document.wide div.bodywrapper {
 
 div.sphinxsidebar {
     width: {{ theme_sidebar_width }};
-    margin-top: 100px;
+    margin-top: 90px;
     line-height: 1.5;
     overflow-wrap: break-word;
 }
@@ -224,6 +224,11 @@ div.sphinxsidebar ul {
   list-style: none;
   font-size: 16px;
   line-height: 1.5;
+}
+
+div.sphinxsidebar .caption-text {
+    line-height: 1.125;
+    font-size: 0.75em;
 }
 
 div.body {
@@ -346,7 +351,7 @@ div.body h6 {
     font-family: {{ theme_head_font_family }};
     font-weight: 700;
     line-height: 1.2;
-    margin: 1.5em 0 0.3em 0;
+    margin: 1.25em 0 0.3em 0;
     padding: 0;
     color: {{ theme_base_text }};
 }
