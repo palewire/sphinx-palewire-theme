@@ -657,7 +657,7 @@ nav#rellinks li.next {
     text-transform: uppercase;
     font-size: 0.8em;
     letter-spacing: 0.02rem;
-    padding-bottom: 0.25em;
+    padding-bottom: 0.375em;
 }
 
 @media screen and (min-width: 875px) {
