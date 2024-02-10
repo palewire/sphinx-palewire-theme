@@ -614,7 +614,6 @@ div.body li {
     line-height: 1.45;
     list-style-type: disc;
 }
-
 .toctree-wrapper p.caption {
     margin-top: 4px;
     margin-bottom: 0;
