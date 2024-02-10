@@ -680,3 +680,10 @@ img {
   overflow: auto !important;
   display: none !important;
 }
+
+div.cell div.cell_input {
+    border-radius: 0 !important;
+    border-left-color: {{ theme_gray }} !important;
+    border-color: {{ theme_gray }} !important;
+    background-color: {{ theme_gray }} !important;
+}
