@@ -462,4 +462,4 @@ In actuality, that cell contains a link that, when we go to it, gives more infor
 When you inspect the code, you might see `&amp;` instead of `&` in the URL. `&amp;` is HTML ecoding for an ampersand (the `&` symbol). If you're trying to go to a URL and you see the encoded version, try replacing it with an ampersand.
 ```
 
-Do you think that URL -- the text after the "href" in the HTML above -- might have some kind of clue as to how to access the further data? How would that look like within our current loop? At what point would you go back to get the extra details? The first thing I would do is 
+Do you think that URL -- the text after the "href" in the HTML above -- might have some kind of clue as to how to access the further data? How would that look like within our current loop? At what point would you go back to get the extra details? The first thing I would do is

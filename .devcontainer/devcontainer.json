@@ -4,6 +4,5 @@
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/pipenv:2": {}
 	},
-	// "forwardPorts": [],
 	"postCreateCommand": "pipenv sync --dev"
 }

@@ -17,56 +17,37 @@ jobs:
         name: Checkout
         uses: actions/checkout@v4
 
-      - id: setup-python
-        name: Setup Python
-        uses: actions/setup-python@v4
+      - id: check-ruff
+        name: Check with Ruff
+        uses: chartboost/ruff-action@v1
         with:
-          python-version: '3.11'
-          cache: 'pipenv'
+          args: 'check --exit-zero --verbose'
 
-      - id: install-pipenv
-        name: Install pipenv
-        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
-        shell: bash
-
-      - id: install-python-dependencies
-        name: Install Python dependencies
-        run: pipenv sync --dev
-        shell: bash
-
-      - id: lint
-        name: Lint Python code
-        run: pipenv run flake8 ./ --verbose
-        shell: bash
+      - id: format-ruff
+        name: Format with Ruff
+        uses: chartboost/ruff-action@v1
+        with:
+          args: 'format --check --verbose'
 
   mypy-python:
-    name: Static-types check
+    name: Check Python static types
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - id: checkout
+        name: Checkout
         uses: actions/checkout@v4
 
       - id: setup-python
         name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          cache: 'pipenv'
-
-      - id: install-pipenv
-        name: Install pipenv
-        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
-        shell: bash
+        uses: hynek/setup-cached-uv@v2
 
       - id: install-python-dependencies
         name: Install Python dependencies
-        run: pipenv sync --dev
-        shell: bash
+        run: uv venv && uv pip install mypy
 
       - id: mypy
         name: Run mypy
-        run: pipenv run mypy ./ --ignore-missing-imports --verbose
-        shell: bash
+        run: uv run mypy ./ --ignore-missing-imports
 
   test-python:
     name: Test Python code
@@ -108,34 +89,30 @@ jobs:
 
       - id: setup-python
         name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          cache: 'pipenv'
-
-      - id: install-pipenv
-        name: Install pipenv
-        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
-        shell: bash
+        uses: hynek/setup-cached-uv@v2
 
       - id: install-python-dependencies
         name: Install Python dependencies
-        run: pipenv sync
-        shell: bash
+        run: uv venv && uv pip install twine wheel setuptools-scm
 
       - id: build-source
         name: Build source release
-        run: pipenv run python setup.py sdist
+        run: uv run python setup.py sdist
+        shell: bash
+
+      - id: build-binary
+        name: Build binary release
+        run: uv run python setup.py bdist_wheel
         shell: bash
 
       - id: check
         name: Check release
-        run: pipenv run twine check dist/*
+        run: uv run twine check dist/*
         shell: bash
 
       - id: save
         name: Save artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: release-candidate
           path: ./dist
@@ -149,7 +126,7 @@ jobs:
     steps:
       - id: fetch
         name: Fetch artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: release-candidate
           path: ./dist

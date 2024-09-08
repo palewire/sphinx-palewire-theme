@@ -1,4 +1,5 @@
 """Sphinx theme for palewi.re documentation."""
+
 from os import path
 
 
