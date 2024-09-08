@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "sphinx-palewire-theme"
 dynamic = ["version"]
 authors = [
-  { name="Ben Welsh", email="Ben Welsh" },
+  { name="Ben Welsh", email="b@palewi.re" },
 ]
 description = "A Sphinx theme for sites hosted at palewi.re"
 license = {text = "MIT"}
