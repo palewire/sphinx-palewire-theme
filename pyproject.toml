@@ -27,7 +27,7 @@ classifiers = [
 ]
 
 [project.scripts]
-sphinx.html_themes = ["palewire = palewire"]
+"sphinx.html_themes" = ["palewire = palewire"]
 
 [project.urls]
 Homepage = "https://github.com/palewire/sphinx-palewire-theme/"
