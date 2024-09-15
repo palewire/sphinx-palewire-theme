@@ -26,7 +26,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 
-[project.scripts."sphinx.html_themes"]
+[project.entry-points."sphinx.html_themes"]
 palewire = "palewire"
 
 [project.urls]
