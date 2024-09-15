@@ -35,3 +35,5 @@ Issues = "https://github.com/palewire/sphinx-palewire-theme/issues"
 
 [tool.setuptools.packages.find]
 where = ["palewire"]
+
+[tool.setuptools_scm]
