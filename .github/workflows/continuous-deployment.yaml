@@ -93,7 +93,7 @@ jobs:
 
       - id: install-python-dependencies
         name: Install Python dependencies
-        run: uv venv && uv pip install twine setuptools-scm
+        run: uv venv && uv pip install twine
 
       - id: build-source
         name: Build source release
