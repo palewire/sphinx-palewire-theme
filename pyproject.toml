@@ -33,9 +33,6 @@ palewire = "palewire"
 Homepage = "https://github.com/palewire/sphinx-palewire-theme/"
 Issues = "https://github.com/palewire/sphinx-palewire-theme/issues"
 
-[tool.setuptools.packages.find]
-where = ["palewire"]
-
 [tool.setuptools]
 packages = ["palewire"]
 zip-safe = false
