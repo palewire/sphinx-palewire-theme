@@ -625,7 +625,7 @@ nav#rellinks {
   margin-top: .75em;
   margin-bottom: .5em;
   font-size: 1em;
-  line-height: 1.7em;
+  line-height: 1.4em;
   clear: both;
   width: 100%;
 }
