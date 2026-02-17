@@ -481,7 +481,7 @@ nav.contents, aside.topic, div.topic {
 
 /* UNORDERED LIST */
 div.body ul.simple {
-    margin: 10px 0 10px 25px;
+    margin: 2px 0 2px 20px;
     padding: 0;
 }
 div.body ul.simple li {
