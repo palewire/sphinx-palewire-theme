@@ -15,7 +15,7 @@ jobs:
     steps:
       - id: checkout
         name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - id: check-ruff
         name: Check with Ruff
@@ -35,7 +35,7 @@ jobs:
     steps:
       - id: checkout
         name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - id: setup-python
         name: Setup Python
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - id: setup-python
         name: Setup Python
@@ -85,7 +85,7 @@ jobs:
     needs: [test-python]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - id: setup-python
         name: Setup Python
@@ -107,7 +107,7 @@ jobs:
 
       - id: save
         name: Save artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: release-candidate
           path: ./dist
@@ -121,7 +121,7 @@ jobs:
     steps:
       - id: fetch
         name: Fetch artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: release-candidate
           path: ./dist
