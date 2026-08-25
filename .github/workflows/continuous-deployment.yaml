@@ -73,7 +73,12 @@ jobs:
         run: pipenv sync --dev
         shell: bash
 
-      - id: tests
+      - id: test-sidebar
+        name: Test sidebar compatibility
+        run: pipenv run python -m unittest discover -s tests
+        shell: bash
+
+      - id: build-test-docs
         name: Build test docs
         run: pipenv run make html
         shell: bash

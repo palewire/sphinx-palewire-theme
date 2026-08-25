@@ -36,3 +36,6 @@ html_sidebars = {
 ```
 
 Further configution of this setting is explained by the [Sphinx documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars).
+
+The theme supports the current Sphinx sidebar markup, including relation links
+and the search form. It does not set an upper bound on Sphinx versions.

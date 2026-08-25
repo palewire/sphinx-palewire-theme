@@ -14,7 +14,7 @@ tomli = "*"
 exceptiongroup = "*"
 
 [packages]
-Sphinx = "*"
+sphinx = "*"
 
 [requires]
 python_version = "3.11"
