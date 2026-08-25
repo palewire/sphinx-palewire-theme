@@ -12,7 +12,7 @@
 {% endblock %}
 
 {%- macro rellink_markup() %}
-  <nav id="rellinks">
+  <nav id="rellinks" aria-label="{{ _('Related pages') }}">
     <ul>
       {%- if prev %}
         <li class="prev">

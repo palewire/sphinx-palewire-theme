@@ -1,1 +1,7 @@
-{{ toctree(includehidden=theme_sidebar_includehidden, collapse=theme_sidebar_collapse) }}
+<nav class="sphinxsidebar-navigation" aria-label="{{ _('Documentation') }}">
+  {{ toctree(
+    includehidden=theme_sidebar_includehidden,
+    collapse=theme_sidebar_collapse,
+    titles_only=True
+  ) }}
+</nav>

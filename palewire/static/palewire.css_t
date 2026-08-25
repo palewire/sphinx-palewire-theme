@@ -227,6 +227,11 @@ div.sphinxsidebar h4 {
   padding: 0;
 }
 
+/* Footer pagination replaces sidebar relation links on narrow screens. */
+div.sphinxsidebar .sphinxsidebar-relations {
+  display: none;
+}
+
 div.sphinxsidebar ul {
   margin: 2px 0;
   padding: 0;
@@ -681,6 +686,7 @@ div.body li {
 /* rel links */
 
 nav#rellinks {
+  display: none;
   margin-top: .75em;
   margin-bottom: .5em;
   font-size: 1em;
@@ -710,6 +716,12 @@ nav#rellinks li.prev {
 nav#rellinks li.next {
     text-align: right;
     padding-right: 10px;
+}
+
+@media screen and (max-width: {{ theme_wide_page_width }}) {
+    nav#rellinks {
+        display: block;
+    }
 }
 
 .breadcrumbs {
