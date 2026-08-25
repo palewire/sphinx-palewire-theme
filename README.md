@@ -45,6 +45,31 @@ configuration of this setting is explained by the [Sphinx documentation](https:/
 The theme supports the current Sphinx search form markup. It does not set an
 upper bound on Sphinx versions.
 
+## Quick start
+
+Install the theme, then create a minimal Sphinx configuration:
+
+```bash
+uv add sphinx-palewire-theme
+uvx sphinx-palewire-theme init
+```
+
+The initializer asks for the site metadata and creates `conf.py`. It enables
+the `palewire` extension, which supplies the standard sidebar and canonical
+URL defaults. Use `--layout narrow` for a single-column site or
+`--navigation minimal` to hide the sidebar.
+
+For an existing configuration, add these settings:
+
+```python
+extensions = ["palewire"]
+
+html_theme = "palewire"
+html_baseurl = "https://palewi.re/docs/my-site/"
+palewire_layout = "wide"
+palewire_navigation = "sidebar"
+```
+
 ## Development
 
 Install the locked development tools and run the same checks used in CI:
