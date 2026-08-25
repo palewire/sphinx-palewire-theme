@@ -24,18 +24,23 @@ html_theme_options = {
 }
 ```
 
-When using the wide layout, you can control which elements are included in the sidebar by adding the `html_sidebars` option to your `conf.py` file. Here's an example that includes the default sidebar elements:
+When using the wide layout, configure the sidebar with the theme's page
+navigation template. It renders links from your site's top-level toctree, not
+the current page's section headings. Previous and next page links are rendered
+in the responsive footer navigation on mobile.
 
 ```python
 html_sidebars = {
     "**": [
         "about.html",
         "navigation.html",
+        "searchbox.html",
     ]
 }
 ```
 
-Further configution of this setting is explained by the [Sphinx documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars).
+Do not add `localtoc.html` or `relations.html` to this configuration. Further
+configuration of this setting is explained by the [Sphinx documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars).
 
-The theme supports the current Sphinx sidebar markup, including relation links
-and the search form. It does not set an upper bound on Sphinx versions.
+The theme supports the current Sphinx search form markup. It does not set an
+upper bound on Sphinx versions.

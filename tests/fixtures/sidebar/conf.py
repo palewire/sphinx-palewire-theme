@@ -5,4 +5,4 @@ from pathlib import Path
 
 html_theme = "palewire"
 html_theme_path = [Path(__file__).resolve().parents[3]]
-html_sidebars = {"**": ["relations.html", "searchbox.html"]}
+html_sidebars = {"**": ["navigation.html", "searchbox.html"]}
