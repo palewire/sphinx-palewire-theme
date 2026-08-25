@@ -62,6 +62,14 @@ class SidebarBuildTests(unittest.TestCase):
         self.assertIn("nav#rellinks {\n  display: none;", stylesheet)
         self.assertIn(
             "@media screen and (max-width: 975px) {\n"
+            "    div.document,\n"
+            "    div.document.wide,\n"
+            "    div.document.narrow {\n"
+            "        width: 100%;",
+            stylesheet,
+        )
+        self.assertIn(
+            "@media screen and (max-width: 975px) {\n"
             "    nav#rellinks {\n"
             "        display: block;",
             stylesheet,
