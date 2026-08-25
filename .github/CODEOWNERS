@@ -1,0 +1,7 @@
+# Require the repository owner to review all changes.
+* @palewire
+
+# Changes to automation and release settings need explicit maintainer review.
+/.github/ @palewire
+/pyproject.toml @palewire
+/uv.lock @palewire

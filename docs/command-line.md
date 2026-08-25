@@ -14,7 +14,7 @@ In this lesson we'll use it to give the computer direct commands to manage files
 Open the command-line program for your operating system and let's get started.
 If you need help finding it refer to the prequisite instructions for the {ref}`command-line-prereq`.
 
-### Print the current directory
+## Print the current directory
 
 Once your terminal window is open the first thing we want to do if find out where you are. If you're using OSX or Linux, type this:
 
@@ -40,7 +40,7 @@ stands for "change directory," a tool we'll use again soon to move between
 folders on your file system.
 ```
 
-### List files in a directory
+## List files in a directory
 
 In order to see all the files and folders in a directory, there's
 another command you need to learn.  On OSX and Linux, type:
@@ -59,7 +59,7 @@ You should now see a list of files and folders appear, such as Downloads, Docume
 clicking around your computer's folders in the user-interface provided
 by your operating system.
 
-### Change directories
+## Change directories
 
 Now let's move. In order to change directories from the command line, we'll
 return to the `cd` command we saw earlier, which works for OSX, Linux and Windows.
@@ -85,7 +85,7 @@ cd ..
 You'll notice that will move you back to the home directory where we began.
 When you're working from the command line, it helps to think of your directory structure as a tree. Navigating through the directories is like going higher and lower on various branches. The convention for moving backwards is `..`
 
-### Creating directories and files
+## Creating directories and files
 
 You might also find it useful sometimes to create files and directories
 from the command line. Let's create a folder called `Code` under our
@@ -122,7 +122,7 @@ touch test.py
 There's no similar command in Windows, but you can accomplish the same thing by saving
 a file from a text editor or other program into our new directory.
 
-### Deleting directories and files
+## Deleting directories and files
 
 If you wanted to remove the file you just made, here's how on OSX and Linux:
 

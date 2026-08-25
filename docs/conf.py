@@ -2,7 +2,6 @@
 
 import os
 import sys
-from typing import Any
 from datetime import datetime
 from pathlib import Path
 
@@ -26,12 +25,12 @@ html_theme = "palewire"
 html_theme_path = [
     Path(__file__).parent.parent.absolute(),
 ]
-html_sidebars: Any[Any] = {
+html_sidebars: dict[str, list[str]] = {
     "**": [
         "about.html",
         "navigation.html",
     ]
 }
-html_theme_options: Any[Any] = {
+html_theme_options: dict[str, bool] = {
     # "nosidebar": True,
 }

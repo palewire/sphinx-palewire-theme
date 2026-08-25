@@ -44,3 +44,14 @@ configuration of this setting is explained by the [Sphinx documentation](https:/
 
 The theme supports the current Sphinx search form markup. It does not set an
 upper bound on Sphinx versions.
+
+## Development
+
+Install the locked development tools and run the same checks used in CI:
+
+```bash
+uv sync --all-groups
+uv run pre-commit run --all-files
+uv run python -m unittest discover -s tests
+uv run sphinx-build -W -b html docs docs/_build/html
+```
