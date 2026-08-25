@@ -14,6 +14,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "Sphinx",
+    "click>=8",
     'exceptiongroup; python_version<"3.11"',
 ]
 classifiers = [
@@ -27,6 +28,9 @@ classifiers = [
 
 [project.entry-points."sphinx.html_themes"]
 palewire = "palewire"
+
+[project.scripts]
+sphinx-palewire-theme = "palewire.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/palewire/sphinx-palewire-theme/"

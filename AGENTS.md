@@ -10,6 +10,7 @@ uv sync --all-groups
 uv run pre-commit run --all-files
 uv run python -m unittest discover -s tests
 uv run sphinx-build -W -b html docs docs/_build/html
+uv run sphinx-build -W -b linkcheck docs docs/_build/linkcheck
 uv build
 ```
 
@@ -21,6 +22,8 @@ test when practical.
 
 - Support Python 3.9 through 3.11.
 - Keep the published package free of development files and generated output.
+- Keep the `palewire` extension and `sphinx-palewire-theme init` command
+  compatible with the documented starter configuration.
 - Do not change release or branch-protection settings without documenting why
   in the pull request.
 - Do not commit `.venv`, Sphinx output, coverage data, or agent scratch files.

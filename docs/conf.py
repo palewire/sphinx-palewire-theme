@@ -1,36 +1,27 @@
 """Sphinx configuration."""
 
-import os
-import sys
 from datetime import datetime
-from pathlib import Path
-
-sys.path.insert(0, os.path.abspath(".."))
+from importlib.metadata import version as distribution_version
 
 extensions = [
     "myst_parser",
-    "sphinx.ext.autodoc",
-    "sphinx.ext.napoleon",
+    "palewire",
 ]
-templates_path = ["_templates"]
-source_suffix = ".md"
-master_doc = "index"
+source_suffix = {".md": "markdown"}
+root_doc = "index"
 
 project = "Sphinx palewire theme"
+author = "Ben Welsh"
 copyright = f"{datetime.now().year} Ben Welsh"
+release = distribution_version("sphinx-palewire-theme")
+version = release
+language = "en"
 
 exclude_patterns = ["_build"]
+linkcheck_ignore = [r"https://askubuntu\.com/.*"]
 
 html_theme = "palewire"
-html_theme_path = [
-    Path(__file__).parent.parent.absolute(),
-]
-html_sidebars: dict[str, list[str]] = {
-    "**": [
-        "about.html",
-        "navigation.html",
-    ]
-}
-html_theme_options: dict[str, bool] = {
-    # "nosidebar": True,
-}
+html_title = project
+html_baseurl = "https://palewi.re/docs/"
+palewire_layout = "wide"
+palewire_navigation = "sidebar"
