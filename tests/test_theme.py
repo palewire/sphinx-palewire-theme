@@ -7,7 +7,10 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock
 
+from click.testing import CliRunner
+
 from palewire import setup
+from palewire.cli import main
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
@@ -69,6 +72,66 @@ class ThemeLayoutTests(unittest.TestCase):
 
         self.assertIn('class="document narrow"', page)
         self.assertNotIn('class="sphinxsidebar"', page)
+
+
+class ThemeInitializerTests(unittest.TestCase):
+    """Verify the starter configuration command."""
+
+    def test_initializer_writes_a_minimal_configuration(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            configuration_path = Path(temporary_directory) / "conf.py"
+
+            result = CliRunner().invoke(
+                main,
+                [
+                    "init",
+                    "--project",
+                    "Example site",
+                    "--author",
+                    "Example author",
+                    "--base-url",
+                    "https://palewi.re/docs/example",
+                    "--layout",
+                    "narrow",
+                    "--navigation",
+                    "minimal",
+                    "--path",
+                    str(configuration_path),
+                ],
+            )
+
+            configuration = configuration_path.read_text()
+            (configuration_path.parent / "index.rst").write_text(
+                "Starter site\n============\n\nA buildable page."
+            )
+            output_directory = configuration_path.parent / "_build"
+            subprocess.run(
+                [
+                    sys.executable,
+                    "-m",
+                    "sphinx",
+                    "-W",
+                    "-b",
+                    "html",
+                    str(configuration_path.parent),
+                    str(output_directory),
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            page = (output_directory / "index.html").read_text()
+
+        self.assertEqual(result.exit_code, 0, result.output)
+        self.assertIn('extensions = ["palewire"]', configuration)
+        self.assertIn('html_baseurl = "https://palewi.re/docs/example/"', configuration)
+        self.assertIn('palewire_layout = "narrow"', configuration)
+        self.assertIn('palewire_navigation = "minimal"', configuration)
+        self.assertIn('class="document narrow"', page)
+        self.assertNotIn('class="sphinxsidebar"', page)
+        self.assertIn(
+            'rel="canonical" href="https://palewi.re/docs/example/index.html"', page
+        )
 
 
 if __name__ == "__main__":
