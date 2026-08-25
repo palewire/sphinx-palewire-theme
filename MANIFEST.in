@@ -3,3 +3,4 @@ include README.md
 recursive-exclude docs *
 exclude Pipfile
 exclude Pipfile.lock
+recursive-include tests/fixtures *.py *.rst

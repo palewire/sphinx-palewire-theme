@@ -218,12 +218,71 @@ div.sphinxsidebar h3 {
   padding: 0;
 }
 
+div.sphinxsidebar h4 {
+  color: #444;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 18px 0 4px;
+  padding: 0;
+}
+
 div.sphinxsidebar ul {
   margin: 2px 0;
   padding: 0;
   list-style: none;
   font-size: 16px;
   line-height: 1.5;
+}
+
+div.sphinxsidebar search,
+div.sphinxsidebar #searchbox {
+  display: block;
+  margin-top: 20px;
+}
+
+div.sphinxsidebar form.search {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  max-width: 100%;
+}
+
+div.sphinxsidebar form.search input {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+div.sphinxsidebar form.search input[type="text"] {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  padding: 0.45em 0.5em;
+  border: 1px solid {{ theme_dar_gray }};
+  border-radius: 0;
+  background-color: {{ theme_base_bg }};
+  color: {{ theme_base_text }};
+}
+
+div.sphinxsidebar form.search input[type="submit"] {
+  flex: 0 0 auto;
+  padding: 0.45em 0.65em;
+  border: 1px solid {{ theme_base_text }};
+  border-radius: 0;
+  background-color: {{ theme_gray }};
+  color: {{ theme_base_text }};
+  cursor: pointer;
+}
+
+div.sphinxsidebar form.search input[type="submit"]:hover {
+  background-color: {{ theme_base_text }};
+  color: {{ theme_base_bg }};
+}
+
+div.sphinxsidebar form.search input:focus-visible {
+  outline: 3px solid {{ theme_base_text }};
+  outline-offset: 2px;
 }
 
 div.sphinxsidebar .caption-text {
