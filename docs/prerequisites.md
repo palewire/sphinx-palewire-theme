@@ -30,10 +30,8 @@ systems give this tool slightly different names, but they all have some
 form of it, and there are alternative programs you can install as well.
 
 On Windows you can find the command-line interface by opening the
-"command prompt." Here are instructions for [Windows
-8](http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8)
-and [earlier
-versions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window). On Apple computers, you open the ["Terminal"
+"command prompt." [Microsoft's Windows support site](https://support.microsoft.com/windows/)
+has current instructions. On Apple computers, you open the ["Terminal"
 application](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line). Ubuntu Linux comes with a program of the [same
 name](http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it).
 
@@ -67,9 +65,7 @@ users, who try downloading and installing Python 3.10 from
 
 In Windows, it's also crucial to make sure that the Python program is
 available on your system's `PATH` so it can be called from anywhere on
-the command line. [This
-screencast](http://showmedo.com/videotutorials/video?name=960000&fromSeriesID=96)
-can guide you through that process.
+the command line.
 
 While Python 3.10 is preferred for this class, but you can probably find a way to make most of
 this tutorial work with other versions.
@@ -93,5 +89,4 @@ If you don't have it already, you can get pip by following [these
 instructions](https://pip.pypa.io/en/latest/installing.html).
 In Windows, it's necessary to make sure that the Python `Scripts`
 directory is available on your system's `PATH` so it can be called
-from anywhere on the command line. [This screencast](http://showmedo.com/videotutorials/video?name=960000&fromSeriesID=96)
-can help.
+from anywhere on the command line.
