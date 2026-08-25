@@ -7,3 +7,8 @@ docs/_build
 .goals/
 .venv/
 *.py[cod]
+.coverage
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.ty/

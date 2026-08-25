@@ -1,5 +1,6 @@
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
+default_language_version:
+  python: python3.9
+
 repos:
   - repo: 'https://github.com/pre-commit/pre-commit-hooks'
     rev: v4.6.0
@@ -21,8 +22,7 @@ repos:
     rev: v0.6.3
     hooks:
       - id: ruff
-        args:
-          - '--fix'
+        args: [--fix]
       - id: ruff-format
 
   - repo: 'https://github.com/asottile/blacken-docs'
@@ -36,12 +36,12 @@ repos:
     rev: v3.17.0
     hooks:
       - id: pyupgrade
-        args:
-          - '--py37-plus'
+        args: [--py39-plus]
 
-  - repo: 'https://github.com/pre-commit/mirrors-mypy'
-    rev: v1.11.2
+  - repo: local
     hooks:
-      - id: mypy
-        # additional_dependencies:
-        #   - types-requests
+      - id: ty
+        name: Check Python static types
+        entry: uv run ty check
+        language: system
+        pass_filenames: false

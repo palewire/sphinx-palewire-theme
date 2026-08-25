@@ -4,7 +4,7 @@ Python can be used for almost any application you can imagine, from building web
 
 A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics -- basic principles that you need to understand as you complete this course.
 
-### How to run a Python program
+## How to run a Python program
 
 A Python file is nothing more than a text file that has the extension ".py" at the end of its name. Any time you see a ".py" file, you can run it from the command line by typing into the command line:
 
@@ -28,14 +28,14 @@ python
 
 And here's what you should get.
 
-```{figure} _static/img/python.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/python.png
 :alt: Python interactive interpreter
 ```
 
 Next we'll use the interpreter to walk through a handful of basic concepts
 you need to understand if you're going to be writing code, Python or otherwise.
 
-### Variables
+## Variables
 
 Variables are like containers that hold different types of data so you
 can go back and refer to them later. They're fundamental to programming
@@ -68,13 +68,13 @@ print(greeting)
 "Hello world!"
 ```
 
-### Data types
+## Data types
 
 Variables can contain many different kinds of data types. There are integers, strings, floating point numbers (decimals), and other types of data that languages like SQL like to deal with in different ways.
 
 Python is no different. In particular, there are six different data types you will be dealing with on a regular basis: strings, integers, floats, lists, tuples and dictionaries. Here's a little detail on each.
 
-#### Strings
+### Strings
 
 Strings contain text values like the "Hello, world!"
 example above. There's not much to say about them other than that they
@@ -86,7 +86,7 @@ goodbye = "Seeya later, dude."
 favorite_animal = "Donkey"
 ```
 
-#### Integers
+### Integers
 
 Integers are whole numbers like 1, 2, 1000 and 1000000.
 They do not have decimal points. Unlike many other variable types,
@@ -99,7 +99,7 @@ b = 2
 c = 1000
 ```
 
-#### Floats
+### Floats
 
 Floats are a fancy name for numbers with decimal points in
 them. They are declared the same way as integers but have some
@@ -111,7 +111,7 @@ b = 0.99332
 c = 100.123
 ```
 
-#### Lists
+### Lists
 
 Lists are collections of values or variables. They are
 declared with brackets like these `[]`, and items inside are separated by
@@ -160,7 +160,7 @@ my_list[-1]
 "d"
 ```
 
-#### Tuples
+### Tuples
 
 Tuples are a special type of list that cannot be changed once they are created. That's not especially important right now. All you need to know is that they are declared with parentheses `()`. For now, just think of them as lists.
 
@@ -169,7 +169,7 @@ tuple_of_numbers = (1, 2, 3, 4, 5)
 tuple_of_strings = ("a", "b", "c", "d")
 ```
 
-#### Dictionaries
+### Dictionaries
 
 Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.
 
@@ -194,7 +194,7 @@ my_phonebook["Mom"]
 
 There's a lot more to dictionaries, but that's all you need to know for now.
 
-### Control structures
+## Control structures
 
 As a beginner your first Python scripts won't be much more complicated that a series of commands that execute one after another, working together to accomplish a task.
 
@@ -206,7 +206,7 @@ for it.
 
 Here are two you will end up using a lot.
 
-#### The if clause
+### The if clause
 
 If statements are pretty much exactly what they sound like. **If** a
 certain condition is met, your program should do something.
@@ -287,7 +287,7 @@ print("I execute no matter what your number is!")
 
 The last statement doesn't depend on the `if` statement, so it will always run.
 
-#### The else clause
+### The else clause
 
 Now let's talk about a common companion for `if` statement -- the `else` clause. It can be combined with an `if` statement to have the script execute a block of code when it turns out not to be true.
 
@@ -305,7 +305,7 @@ else:
 
 In this case, we're telling our program to print one thing if `number` is greater than five, and something else if it's not. Notice that the `else` statement also ends with a colon, and as such its contents are also indented four spaces.
 
-#### For loops
+### For loops
 
 Remember earlier we discussed the concept of a list -- the type of
 variable that can hold multiple items in it all at once?
@@ -362,7 +362,7 @@ The next thing you have to specify is the list you want to loop over, in
 this case `list_of_letters`. The line ends with a colon, and the next
 line starts with an indent. And that's the basics of building a loop!
 
-#### Functions
+### Functions
 
 Often it's helpful to encapsulate a sequence of programming instructions into little tools that can be used over and over again. That's where functions come in.
 
@@ -432,7 +432,7 @@ def say_hello():
 But the idea of arguments and `return` values are still fundamental in
 understanding functions, and they will come up more often than not.
 
-### Python as a toolbox
+## Python as a toolbox
 
 Lucky for us, Python already has tools filled with functions to do pretty much anything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.
 

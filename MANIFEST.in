@@ -1,6 +1,10 @@
 include LICENSE
 include README.md
-recursive-exclude docs *
-exclude Pipfile
-exclude Pipfile.lock
-recursive-include tests/fixtures *.py *.rst
+recursive-include palewire *.html *.conf static/*.css static/*.css_t
+prune .devcontainer
+prune .github
+prune docs
+prune tests
+exclude .gitignore
+exclude .pre-commit-config.yaml
+exclude AGENTS.md

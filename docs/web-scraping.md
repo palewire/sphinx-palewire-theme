@@ -6,7 +6,7 @@ The target is a regularly updated [roster of inmates at the Boone County Jail in
 
 You may notice that there's an export button on this page. When this tutorial was first written, the jail did not allow you to export to a CSV -- of course, if there is an export option, take it! As a simple site though, it's still a good way to learn to scrape. Sometimes you may even find that an export doesn't contain all of the information a site has -- in that case, you may want to scrape it anyway!
 
-### Installing dependencies
+## Installing dependencies
 
 The scraper will use Python's [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) toolkit to parse the site's HTML and extract the data.
 
@@ -28,19 +28,19 @@ pip install bs4
 pip install requests
 ```
 
-### Analyzing the HTML
+## Analyzing the HTML
 
 HTML is the framework that, in most cases, contains the content of a page. Other bits and pieces like CSS and JavaScript can style, reshape and add layers of interaction to a page.
 
 But unless you've got something fancy on your hands, the data you're seeking to scrape is usually somewhere within the HTML of the page and your job is to write a script in just the write way to walk through it and pull out the data. In this case, we'll be looking to extract data from the big table that makes up the heart of the page.
 
-```{figure} _static/img/target.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/target.png
 :width: 600px
 ```
 
 By the time we're finished, we want to have extracted that data, now encrusted in layers of HTML, into a clean spreadsheet.
 
-```{figure} _static/img/xls-2.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/xls-2.png
 :width: 600px
 ```
 
@@ -48,12 +48,12 @@ In order to scrape a website, we need to understand how a typical webpage is put
 
 To view the HTML code that makesup this page () open up a browser and visit [out target](https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s). Then right click with your mouse and select "View Source." You can do this for any page on the web.
 
-```{figure} _static/img/source.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/source.png
 ```
 
 We could fish through all the code to find our data, but to dig this more easily, we can use your web browser's inspector tool. Right click on the table of data that you are interested in and select 'inspect element.'
 
-```{figure} _static/img/inspect.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/inspect.png
 :alt: Inspect the element
 ```
 
@@ -63,7 +63,7 @@ The inspector tool might have a slightly different name depending on which brows
 
 Your browser will open a special panel and highlight the portion of the page's HTML code that you've just clicked on.
 
-```{figure} _static/img/table.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/table.png
 :alt: Inspector with the highlighted element
 :width: 600px
 ```
@@ -81,7 +81,7 @@ On Boone County's page, there is only table in the HTML's `body` tag. The table 
 <table class="resultsTable" style="margin: 0 auto; width: 90%; font-size: small;">
 ```
 
-### Extracting an HTML table
+## Extracting an HTML table
 
 Now that we know where to find the data we're after, it's time to write script to pull it down and save it to a comma-delimited file.
 
@@ -338,7 +338,7 @@ Since there are no longer any print statements in the file, the script is no lon
 
 There is still one obvious problem though. There are no headers!
 
-```{figure} _static/img/xls-1.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/xls-1.png
 :width: 600px
 ```
 
@@ -382,11 +382,11 @@ python scrape.py
 
 Our headers are now there, and you've finished the class. Congratulations! You're now a web scraper.
 
-```{figure} _static/img/xls-2.png
+```{figure} https://palewi.re/docs/first-web-scraper/_images/xls-2.png
 :width: 600px
 ```
 
-### But that's not all: Getting the missing data
+## But that's not all: Getting the missing data
 
 Since this scraper was first written, the sheriff's office changed how it displays inmates. You'll note it now only shows 50 rows at a time, and your scraper only downloads 50 rows at a time. This is a problem -- you want all of the information, not just 50 rows!
 
@@ -446,7 +446,7 @@ writer.writerow(["Last", "First", "Middle", "Suffix", "Gender", "Race", "Age", "
 writer.writerows(list_of_rows)
 ```
 
-### Extra Credit: How would you get the rest of the details?
+## Extra Credit: How would you get the rest of the details?
 
 In the class, we simply tossed out the "Details" column of data. But we only were getting the `text` of the cells, which was the word "Details."
 

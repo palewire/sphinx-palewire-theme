@@ -22,7 +22,7 @@ One potential shortcut is using [GitHub codespaces](https://github.com/features/
 
 (command-line-prereq)=
 
-### Command-line interface
+## Command-line interface
 
 Unless something is wrong with your computer, there should be a way to
 open a window that lets you type in commands. Different operating
@@ -37,7 +37,7 @@ versions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt
 application](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line). Ubuntu Linux comes with a program of the [same
 name](http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it).
 
-### Text editor
+## Text editor
 
 A program like Microsoft Word, which can do all sorts of text formatting
 like change the size and color of words, is not what you need. Do not
@@ -51,7 +51,7 @@ programs are easy to find and some of the best ones are free.
 
 If you don't have one already, try installing Microsoft's [Visual Code Studio](https://code.visualstudio.com/), a popular, free option.
 
-### Python
+## Python
 
 If you are using Mac OS or a common flavor of Linux, Python is probably
 already installed. Tou can test to see what version, if any, is there
@@ -76,7 +76,7 @@ this tutorial work with other versions.
 
 (command-line-pip)=
 
-### pip
+## pip
 
 The [pip package manager](https://pip.pypa.io/en/latest/) makes it
 easy to install open-source libraries that expand what you're able to do

@@ -9,7 +9,7 @@ authors = [
   { name="Ben Welsh", email="b@palewi.re" },
 ]
 description = "A Sphinx theme for sites hosted at palewi.re"
-license = {text = "MIT"}
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
@@ -23,7 +23,6 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
-    "License :: OSI Approved :: MIT License",
 ]
 
 [project.entry-points."sphinx.html_themes"]
@@ -35,6 +34,25 @@ Issues = "https://github.com/palewire/sphinx-palewire-theme/issues"
 
 [tool.setuptools]
 packages = ["palewire"]
+include-package-data = false
 zip-safe = false
 
+[tool.setuptools.package-data]
+palewire = ["*.html", "*.conf", "static/*.css", "static/*.css_t"]
+
 [tool.setuptools_scm]
+
+[dependency-groups]
+dev = [
+    "myst-parser",
+    "pre-commit",
+    "ruff",
+    "sphinx-autobuild",
+    "ty",
+]
+
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
