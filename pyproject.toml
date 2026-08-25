@@ -38,7 +38,7 @@ include-package-data = false
 zip-safe = false
 
 [tool.setuptools.package-data]
-palewire = ["*.html", "*.conf", "static/*.css"]
+palewire = ["*.html", "*.conf", "static/*.css", "static/*.css_t"]
 
 [tool.setuptools_scm]
 

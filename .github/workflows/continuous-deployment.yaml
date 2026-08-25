@@ -65,7 +65,11 @@ jobs:
       - run: |
           uv venv --python 3.11 /tmp/package-test
           uv pip install --python /tmp/package-test/bin/python dist/*.whl
-          /tmp/package-test/bin/python -c "import palewire; assert palewire.__file__"
+          mkdir /tmp/package-test-docs
+          printf 'html_theme = "palewire"\n' > /tmp/package-test-docs/conf.py
+          printf 'Package test\n============\n' > /tmp/package-test-docs/index.rst
+          /tmp/package-test/bin/sphinx-build -W -b html /tmp/package-test-docs /tmp/package-test-docs/_build
+          test -f /tmp/package-test-docs/_build/_static/palewire.css
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: release-candidate
