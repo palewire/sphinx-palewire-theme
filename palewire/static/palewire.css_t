@@ -718,7 +718,7 @@ nav#rellinks li.next {
     padding-right: 10px;
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: {{ theme_wide_page_width }}) {
     nav#rellinks {
         display: block;
     }

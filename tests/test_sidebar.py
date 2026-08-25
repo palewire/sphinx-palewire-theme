@@ -61,7 +61,7 @@ class SidebarBuildTests(unittest.TestCase):
         self.assertIn("div.sphinxsidebar .sphinxsidebar-relations", stylesheet)
         self.assertIn("nav#rellinks {\n  display: none;", stylesheet)
         self.assertIn(
-            "@media screen and (max-width: 875px) {\n"
+            "@media screen and (max-width: 975px) {\n"
             "    nav#rellinks {\n"
             "        display: block;",
             stylesheet,
