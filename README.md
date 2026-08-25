@@ -54,4 +54,5 @@ uv sync --all-groups
 uv run pre-commit run --all-files
 uv run python -m unittest discover -s tests
 uv run sphinx-build -W -b html docs docs/_build/html
+uv run sphinx-build -W -b linkcheck docs docs/_build/linkcheck
 ```
