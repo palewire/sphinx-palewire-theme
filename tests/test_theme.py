@@ -72,6 +72,12 @@ class ThemeLayoutTests(unittest.TestCase):
 
         self.assertIn('class="document narrow"', page)
         self.assertNotIn('class="sphinxsidebar"', page)
+        self.assertIn('class="desktop-nav"', page)
+        self.assertIn('class="nav-menu-toggle"', page)
+        self.assertIn('popovertarget="mobile-nav-links"', page)
+        self.assertIn('id="mobile-nav-links" class="nav-drawer" popover', page)
+        self.assertIn('popovertargetaction="hide"', page)
+        self.assertIn('href="https://palewi.re/guides/"', page)
 
 
 class ThemeInitializerTests(unittest.TestCase):

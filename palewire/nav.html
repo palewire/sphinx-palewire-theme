@@ -1,6 +1,6 @@
 <nav class="nav">
     <div class="row">
-        <div class="sevencol">
+        <div class="fivecol">
             <div class="shingle">
                 <a href="https://palewi.re/">
                     <div rel="rnews:copyrightedBy rnews:hasSource rnews:providedBy">
@@ -11,34 +11,37 @@
                 </a>
             </div>
         </div>
-        <div class="fivecol last links">
-            <ul>
-                <li>
-                    <a href="http://palewi.re/posts/" title="Posts">
-                        Posts
-                    </a>
-                </li>
-                <li>
-                    <a href="http://palewi.re/work/" title="Work">
-                        Work
-                    </a>
-                </li>
-                <li>
-                    <a href="http://palewi.re/talks/" title="Talks">
-                        Talks
-                    </a>
-                </li>
-                <li>
-                    <a href="http://palewi.re/docs/" title="Docs">
-                        Docs
-                    </a>
-                </li>
-                <li>
-                    <a href="http://palewi.re/who-is-ben-welsh/" title="Who is Ben Welsh?">
-                        About
-                    </a>
-                </li>
+        <div class="sevencol last links">
+            <ul class="desktop-nav">
+                {% include "nav_links.html" %}
             </ul>
+            <div class="nav-menu">
+                <button type="button"
+                        class="nav-menu-toggle"
+                        popovertarget="mobile-nav-links"
+                        aria-label="Menu">
+                    <span class="hamburger" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <div id="mobile-nav-links" class="nav-drawer" popover>
+                    <div class="nav-drawer-header">
+                        <span>Menu</span>
+                        <button type="button"
+                                class="nav-menu-close"
+                                popovertarget="mobile-nav-links"
+                                popovertargetaction="hide"
+                                aria-label="Close menu">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <ul>
+                        {% include "nav_links.html" %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
